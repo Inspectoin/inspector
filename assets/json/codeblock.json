@@ -1,0 +1,7 @@
+{
+  "name": "CodeBlock",
+  "parameters": {
+    "filepath": "lib/main.dart",
+    "changes": "Replace print with debugPrint"
+  }
+}
