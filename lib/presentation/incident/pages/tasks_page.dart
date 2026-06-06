@@ -56,11 +56,12 @@ class _TasksPageState extends State<TasksPage> {
 
           List<String> filters =context.locale.languageCode=='ar'?  visits.map((e)=>e.visitType).toSet().toList():visitsEn.map((e)=>e.visitType).toSet().toList();
 
+          // Keep the selected tab index within range of the (data-driven) tabs.
+          if (selectedFilter >= filters.length) selectedFilter = 0;
 
-
-          filters.removeLast();
-
-          List<Facility> filteredList=list.where((e)=>e.type==filters[selectedFilter]).toList();
+          List<Facility> filteredList=filters.isEmpty
+              ? const <Facility>[]
+              : list.where((e)=>e.type==filters[selectedFilter]).toList();
 
           if(selectedType.value!=null){
             filteredList =filteredList.where((e)=>e.status==selectedType.value).toList();

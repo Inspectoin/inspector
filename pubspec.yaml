@@ -97,6 +97,7 @@ flutter:
     - assets/fonts/
     - assets/lottie/
     - assets/json/codeblock.json
+    - assets/json/mewa_mock_data.json
   fonts:
     - family: Tajawal
       fonts:
