@@ -1,0 +1,200 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MEWA Inspector — UI Preview</title>
+<style>
+*{box-sizing:border-box;font-family:'Tajawal','Segoe UI',Arial,sans-serif}
+body{margin:0;background:#e9eef0;color:#0E2A2A;padding:24px}
+h1{text-align:center;font-size:20px;color:#2F4B4B}
+.note{text-align:center;color:#6b7a7a;font-size:13px;margin-bottom:20px}
+.stage{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
+.phone{width:360px;background:#F9F9F9;border-radius:36px;box-shadow:0 12px 40px rgba(0,0,0,.18);
+  overflow:hidden;border:8px solid #11201f}
+.screen{height:740px;overflow-y:auto;padding:18px}
+.slabel{text-align:center;font-size:12px;color:#8a9a9a;margin-top:8px}
+.hdr{display:flex;align-items:center;gap:10px;margin:8px 0 18px}
+.hdr .av{width:46px;height:46px;border-radius:50%;background:#2F4B4B;display:flex;align-items:center;
+  justify-content:center;color:#fff;font-size:20px}
+.hdr .who small{color:#7a8a8a}
+.hdr .who div{font-weight:700;font-size:17px}
+.hdr .bell{margin-inline-start:auto;width:38px;height:38px;border-radius:12px;background:#fff;
+  display:flex;align-items:center;justify-content:center}
+.grid{position:relative;height:560px}
+.quad{position:absolute;width:48%;height:48%;background:#fff;border-radius:22px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #eef2f2}
+.quad .qi{width:54px;height:54px;border-radius:50%;background:#eef6f4;display:flex;align-items:center;
+  justify-content:center;font-size:24px}
+.quad .qt{font-weight:700;color:var(--qc)}
+.quad:nth-child(1){top:0;right:0} .quad:nth-child(2){top:0;left:0}
+.quad:nth-child(3){bottom:0;right:0} .quad:nth-child(4){bottom:0;left:0}
+.allbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:96px;
+  border-radius:50%;background:#f5f5f5;display:flex;align-items:center;justify-content:center}
+.allbtn b{width:78px;height:78px;border-radius:50%;border:2px solid #0E2A2A;color:#0E2A2A;
+  display:flex;align-items:center;justify-content:center;font-size:18px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px}
+.tab{white-space:nowrap;padding:11px 15px;border-radius:18px;background:#fff;font-weight:600;
+  font-size:14px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.tab.sel{background:#349C9C;color:#fff}
+.card{background:#fff;border-radius:22px;padding:16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.row{display:flex;gap:8px} .top{align-items:center;justify-content:space-between}
+.fname{font-weight:700;font-size:17px}
+.lic{font-size:12px;color:#349C9C;background:#f9f9f9;border:1px solid #d6d5d5;border-radius:20px;padding:4px 9px;white-space:nowrap}
+.mid{margin:10px 0;align-items:flex-start}
+.desc{flex:1;font-size:13.5px;line-height:1.5;color:#2b3a3a;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pill{align-self:flex-start;background:#2F4B4B;color:#fff;font-size:12px;border-radius:16px;padding:6px 10px;white-space:nowrap}
+.boxes{gap:10px} .box{flex:1;border-radius:12px;padding:9px;text-align:center}
+.box span{display:block;font-size:11px;opacity:.8} .box b{font-size:12px}
+.box.d{background:#f9f3ff;color:#59168B} .box.t{background:#EFF6FF;color:#1c398d} .box.k{background:#ECFDF5;color:#004F3B}
+.empty{text-align:center;color:#9aa;padding:30px}
+</style></head><body>
+<h1>معاينة واجهة تطبيق المفتش — بيانات وزارة البيئة والمياه والزراعة</h1>
+<div class="note">Static HTML preview (not a Flutter render) · driven by assets/json/mewa_mock_data.json · 8 facilities · 4 visits</div>
+<div class="stage">
+  <div>
+  <div class="phone"><div class="screen">
+    <div class="hdr"><div class="av">👤</div>
+      <div class="who"><small>مرحباً</small><div>سامي بن عبد الله القحطاني</div></div>
+      <div class="bell">🔔</div></div>
+    <div class="grid"><div class="quad" style="--qc:#349C9C"><div class="qi">🏃</div><div class="qt">نشطة</div></div><div class="quad" style="--qc:#2F4B4B"><div class="qi">🗓</div><div class="qt">مجدولة</div></div><div class="quad" style="--qc:#0E2A2A"><div class="qi">✅</div><div class="qt">منتهية</div></div><div class="quad" style="--qc:#349C9C"><div class="qi">✏️</div><div class="qt">بحاجه الي تعديل</div></div><div class="allbtn"><b>الكل</b></div></div>
+  </div></div>
+  <div class="slabel">الشاشة الرئيسية · Home (quadrants)</div>
+  </div>
+
+  <div>
+  <div class="phone"><div class="screen">
+    <div class="hdr"><div class="av">👤</div>
+      <div class="who"><small>مرحباً</small><div>سامي بن عبد الله القحطاني</div></div>
+      <div class="bell">🔔</div></div>
+    <div class="tabs"><div class="tab sel">زيارة رقابية ميدانية</div><div class="tab ">زيارة تفتيش دوري</div><div class="tab ">زيارة متابعة</div></div>
+    <div class="list" data-tab="0" style="display:block">
+    <div class="card">
+      <div class="row top">
+        <div class="fname">مزرعة الجوف الزراعية</div>
+        <div class="lic">MEWA-FARM-2024-0001</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">فحص الامتثال لشروط ترخيص المزرعة وضوابط استخدام الأسمدة والمبيدات والتحقق من اشتراطات الأمن الحيوي للحيوانات</div>
+        <div class="pill">نشطة</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>23-08-2024</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>14:00</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>1.2 كم</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row top">
+        <div class="fname">مشروع الاستزراع السمكي الساحلي</div>
+        <div class="lic">MEWA-AQU-2024-0007</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">منشأة مشروع استزراع مائي ضمن نطاق إشراف الوزارة — عدد المخالفات المفتوحة: 0، مستوى الخطورة: low.</div>
+        <div class="pill">منتهية</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>—</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>—</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>47.3 كم</b></div>
+      </div>
+    </div></div><div class="list" data-tab="1" style="display:none">
+    <div class="card">
+      <div class="row top">
+        <div class="fname">سوق الخضار والفواكه المركزي</div>
+        <div class="lic">MEWA-MKT-2024-0015</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">تفتيش دوري شهري على اشتراطات ضبط جودة المنتجات الزراعية والنظافة العامة ومتطلبات الترخيص في السوق</div>
+        <div class="pill">مجدولة</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>23-08-2024</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>09:00</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>5.7 كم</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row top">
+        <div class="fname">مسلخ الرياض الرئيسي</div>
+        <div class="lic">MEWA-SLA-2024-0003</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">منشأة مسلخ ضمن نطاق إشراف الوزارة — عدد المخالفات المفتوحة: 3، مستوى الخطورة: medium.</div>
+        <div class="pill">مجدولة</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>—</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>—</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>22.1 كم</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row top">
+        <div class="fname">مستودع التبريد الزراعي المركزي</div>
+        <div class="lic">MEWA-COLD-2024-0008</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">منشأة مستودع تبريد زراعي ضمن نطاق إشراف الوزارة — عدد المخالفات المفتوحة: 0، مستوى الخطورة: low.</div>
+        <div class="pill">منتهية</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>—</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>—</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>16.2 كم</b></div>
+      </div>
+    </div></div><div class="list" data-tab="2" style="display:none">
+    <div class="card">
+      <div class="row top">
+        <div class="fname">العيادة البيطرية المركزية</div>
+        <div class="lic">MEWA-VET-2024-0042</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">متابعة إجراءات تجديد تراخيص مزاولة المهنة البيطرية وشهادات السلامة المنتهية الصلاحية وتصحيح مخالفات التخلص الصحي من النفايات</div>
+        <div class="pill">مجدولة</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>23-08-2024</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>11:00</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>12.4 كم</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row top">
+        <div class="fname">المختبر البيطري الإقليمي</div>
+        <div class="lic">MEWA-VETL-2024-0011</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">منشأة مختبر بيطري ضمن نطاق إشراف الوزارة — عدد المخالفات المفتوحة: 1، مستوى الخطورة: low.</div>
+        <div class="pill">نشطة</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>—</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>—</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>8.5 كم</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row top">
+        <div class="fname">مصنع أعلاف الشمال</div>
+        <div class="lic">MEWA-FEED-2024-0019</div>
+      </div>
+      <div class="row mid">
+        <div class="desc">مراجعة أدلة إضافية لتصحيح مخالفات استخدام القمح كمدخل علفي والتحقق من مطابقة مستلزمات الإنتاج للمواصفات المعتمدة</div>
+        <div class="pill">بحاجه الي تعديل</div>
+      </div>
+      <div class="row boxes">
+        <div class="box d"><span>🗓 التاريخ</span><b>23-08-2024</b></div>
+        <div class="box t"><span>⏰ الوقت</span><b>14:00</b></div>
+        <div class="box k"><span>📍 المسافة</span><b>34.8 كم</b></div>
+      </div>
+    </div></div>
+  </div></div>
+  <div class="slabel">المهام · Tasks (facility list, tab 1 shown)</div>
+  </div>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach((t,i)=>{t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('sel'));t.classList.add('sel');
+  document.querySelectorAll('.list').forEach(l=>l.style.display=l.dataset.tab==i?'block':'none');
+};});
+</script>
+</body></html>
